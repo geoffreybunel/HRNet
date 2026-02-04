@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react';
-import Modal from './components/Modal'
+import Modal from "react-hrnet-modal";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ function App() {
       <button onClick={() => setIsOpen(true)}>Ouvrir la modale</button>
 
       <Modal isOpen={isOpen} onClose={handleClose}>
-        Contenu de la modale
+        Employee Created!
       </Modal>
     </>
   )
