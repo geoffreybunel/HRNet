@@ -1,5 +1,5 @@
-import Modal from "react-hrnet-modal";
-import "react-hrnet-modal/style.css";
+import Modal from "@geoffreybunel/react-hrnet-modal";
+import "@geoffreybunel/react-hrnet-modal/style.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
