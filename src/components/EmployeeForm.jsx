@@ -34,7 +34,7 @@ function EmployeeForm({ onSubmit }) {
     }
 
     return (
-        <form onSubmit={handleSubmit} id="create-employee">
+        <form onSubmit={handleSubmit} id="create-employee" className="create-employee__form">
             <label htmlFor="first-name">First Name</label>
             <input type="text" id="first-name" autoComplete="off" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
 

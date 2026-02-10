@@ -4,12 +4,13 @@ import Modal from "@geoffreybunel/react-hrnet-modal";
 import "@geoffreybunel/react-hrnet-modal/style.css";
 import EmployeeForm from "../components/EmployeeForm";
 
-function CreateEmployee() {
+function CreateEmployee({ onAddEmployee }) {
     // Modal state
     const [isOpen, setIsOpen] = useState(false);
 
     function handleCreateEmployee(employee) {
         onAddEmployee(employee);
+        console.log(employee)
         setIsOpen(true);
     }
 
@@ -17,7 +18,7 @@ function CreateEmployee() {
         <>
             <h1>HRnet</h1>
 
-            <div className="create-employee-container">
+            <div className="main-container">
                 <Link to="/employee-list">View Current Employees</Link>
 
                 <h2>Create Employee</h2>
