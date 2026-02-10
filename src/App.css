@@ -78,3 +78,19 @@ input {
 .react-datepicker__day--outside-month:hover {
   color: #ffffff !important;
 }
+
+#months-select {
+  border: none;
+}
+
+#months-select:hover {
+  text-decoration: underline;
+}
+
+#years-select {
+  border: none;
+}
+
+#years-select:hover {
+  text-decoration: underline;
+}
