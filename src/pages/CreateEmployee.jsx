@@ -2,9 +2,12 @@ import Modal from "@geoffreybunel/react-hrnet-modal";
 import "@geoffreybunel/react-hrnet-modal/style.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import DatePickerInput from "../components/DatePickerInput";
 
 function CreateEmployee() {
     const [isOpen, setIsOpen] = useState(false);
+    const [dateOfBirth, setDateOfBirth] = useState(null);
+    const [startDate, setStartDate] = useState(null);
 
     function handleClose() {
       setIsOpen(false)
@@ -15,22 +18,30 @@ function CreateEmployee() {
             <h1>HRnet</h1>
 
             <div className="create-employee-container">
-                <Link to="/create">View Current Employees</Link>
+                <Link to="/employee-list">View Current Employees</Link>
 
                 <h2>Create Employee</h2>
 
                 <form action="#" id="create-employee">
                     <label htmlFor="first-name">First Name</label>
-                    <input type="text" id="first-name" />
+                    <input type="text" id="first-name" autoComplete="off" />
 
                     <label htmlFor="last-name">Last Name</label>
                     <input type="text" id="last-name" />
 
-                    <label htmlFor="date-of-birth">Date of Birth</label>
-                    <input id="date-of-birth" type="date" />
+                    <DatePickerInput
+                        label="Date of birth"
+                        id="date-of-birth"
+                        selectedDate={dateOfBirth}
+                        onChange={setDateOfBirth}
+                    />
 
-                    <label htmlFor="start-date">Start Date</label>
-                    <input id="start-date" type="date" />
+                    <DatePickerInput
+                        label="Start Date"
+                        id="start-date"
+                        selectedDate={startDate}
+                        onChange={setStartDate}
+                    />
 
                     <fieldset className="address">
                         <legend>Address</legend>
@@ -117,12 +128,10 @@ function CreateEmployee() {
                         <option>Legal</option>
                     </select>
       
+                    <button onClick={() => setIsOpen(true)}>Save</button>
                 </form>
             </div>
             
-
-
-            <button onClick={() => setIsOpen(true)}>Save</button>
 
             <Modal isOpen={isOpen} onClose={handleClose}>
                 Employee Created!
