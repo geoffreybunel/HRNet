@@ -45,7 +45,7 @@ export default function DatePickerInput({ label, selectedDate, onChange, id }) {
               onClick={decreaseMonth}
               disabled={prevMonthButtonDisabled}
             >
-              <i class="fa-solid fa-caret-left"></i>
+              <i className="fa-solid fa-caret-left"></i>
             </button>
 
             {/* 🏠 Home */}
@@ -55,11 +55,12 @@ export default function DatePickerInput({ label, selectedDate, onChange, id }) {
               onClick={() => onChange(new Date())}
               title="Go to today"
             >
-              <i class="fa-solid fa-house"></i>
+              <i className="fa-solid fa-house"></i>
             </button>
 
             {/* Mois */}
             <select
+              id="months-select"
               value={MONTHS[getMonth(date)]}
               onChange={(e) =>
                 changeMonth(MONTHS.indexOf(e.target.value))
@@ -74,6 +75,7 @@ export default function DatePickerInput({ label, selectedDate, onChange, id }) {
 
             {/* Année */}
             <select
+              id="years-select"
               value={getYear(date)}
               onChange={(e) => changeYear(Number(e.target.value))}
             >
@@ -91,7 +93,7 @@ export default function DatePickerInput({ label, selectedDate, onChange, id }) {
               onClick={increaseMonth}
               disabled={nextMonthButtonDisabled}
             >
-              <i class="fa-solid fa-caret-right"></i>
+              <i className="fa-solid fa-caret-right"></i>
             </button>
           </div>
         )}
