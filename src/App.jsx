@@ -1,15 +1,25 @@
 import { Route, Routes } from 'react-router';
 import './App.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import EmployeeList from '../src/pages/EmployeeList'
 import CreateEmployee from '../src/pages/CreateEmployee'
+import { getEmployees, saveEmployees } from './services/employeeStorage';
 
 function App() {
   const [employees, setEmployees] = useState([]);
 
-  const addEmployee = (employee) => {
-    setEmployees((prev) => [...prev, employee]);
+  function addEmployee(employee) {
+    setEmployees((prevEmployees) => {
+      const updatedEmployees = [...prevEmployees, employee];
+      saveEmployees(updatedEmployees);
+      return updatedEmployees;
+    })
   }
+
+  useEffect(() => {
+    const storedEmployees = getEmployees();
+    setEmployees(storedEmployees);
+  }, []);
 
   return (
     <>
