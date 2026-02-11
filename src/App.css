@@ -134,6 +134,11 @@ input {
 
 /*** EMPLOYEE LIST ***/
 /* Controls */
+
+.ml-5 {
+  margin-left: 5px;
+}
+
 .employee-table_wrapper {
   max-width: 967px;
 }

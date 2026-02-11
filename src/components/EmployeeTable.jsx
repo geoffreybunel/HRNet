@@ -18,7 +18,18 @@ function EmployeeTable({ data }) {
                     return value ? format(new Date(value), "MM/dd/yyyy") : "";
                 }
             },
-            { accessorKey: "department", header: "Department" },
+            {
+                accessorKey: "department",
+                header: "Department",
+                cell: ({ getValue }) => {
+                  const value = getValue();
+                  if (!value) return "";
+                  return value
+                    .split(" ")
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(" ");
+                },
+            },
             { 
                 accessorKey: "dateOfBirth", 
                 header: "Date of Birth",
@@ -99,8 +110,8 @@ function EmployeeTable({ data }) {
                                         header.getContext()
                                     )}
                                     {{
-                                        asc: " 🔼",
-                                        desc: " 🔽",
+                                        asc: <i class="fa-solid fa-caret-up ml-5"></i>,
+                                        desc: <i class="fa-solid fa-caret-down ml-5"></i>,
                                     }[header.column.getIsSorted()] ?? ""}
                                 </th>
                             ))}
