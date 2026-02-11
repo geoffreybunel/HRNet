@@ -49,6 +49,9 @@ function EmployeeTable({ data }) {
         getFilteredRowModel: getFilteredRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
     });
+
+    const pageCount = table.getPageCount();
+    const currentPage = table.getState().pagination.pageIndex;
     
     return (
         <div className="employee-table_wrapper">
@@ -61,7 +64,7 @@ function EmployeeTable({ data }) {
                         onChange={(e) => table.setPageSize(Number(e.target.value))}
                         id="entries"
                     >
-                        {[5, 10, 25, 50].map((size) => (
+                        {[5, 10, 25, 50, 100].map((size) => (
                             <option key={size} value={size}>
                                 {size}
                             </option>
@@ -144,10 +147,15 @@ function EmployeeTable({ data }) {
                         Previous
                     </button>
 
-                    <span>
-                        Page {table.getState().pagination.pageIndex + 1} of{" "}
-                        {table.getPageCount()}
-                    </span>
+                    {Array.from({ length: pageCount }, (_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => table.setPageIndex(index)}
+                            disabled={index === currentPage}
+                        >
+                            {index + 1}
+                        </button>
+                    ))}
 
                     <button onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
                         Next
