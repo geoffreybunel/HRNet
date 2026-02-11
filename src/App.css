@@ -125,3 +125,93 @@ input {
 .select-field:focus {
   outline: none;
 }
+
+/*** EMPLOYEE LIST ***/
+/* Controls */
+.employee-table_wrapper {
+  max-width: 967px;
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  align-items: center;
+  width: 100%;
+}
+
+.table-controls select,
+.table-controls input {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th {
+  position: relative;
+  text-align: center;
+  padding: 10px 18px;
+  border-bottom: 2px solid #ddd;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.th:hover {
+  background-color: #eaeaea;
+}
+
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fafafa; /* gris clair */
+}
+
+tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* LOWER CONTROLS */
+
+.table-lower-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #eee;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@geoffreybunel/react-hrnet-modal": "^0.1.0",
+    "@tanstack/react-table": "^8.21.3",
     "date-fns": "^4.1.0",
     "react": "^19.2.0",
     "react-datepicker": "^9.1.0",
