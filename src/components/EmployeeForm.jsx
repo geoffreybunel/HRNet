@@ -4,6 +4,7 @@ import DatePickerInput from "../components/DatePickerInput";
 import SelectInput from "../components/SelectInput";
 
 function EmployeeForm({ onSubmit }) {
+    const [error, setError] = useState("");
     // Form states
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -17,6 +18,23 @@ function EmployeeForm({ onSubmit }) {
 
     function handleSubmit(e) {
         e.preventDefault();
+
+        if (
+            !firstName ||
+            !lastName ||
+            !dateOfBirth ||
+            !startDate ||
+            !street ||
+            !city ||
+            !state ||
+            !zipCode ||
+            !department
+        ) {
+            setError("All fields must be filled out.");
+            return;
+        }
+
+        setError("");
 
         const employee = {
             firstName,
@@ -84,6 +102,7 @@ function EmployeeForm({ onSubmit }) {
                 options={DEPARTMENTS}
             />
 
+            {error && <p className="form-error">{error}</p>}
             <button type="submit">Save</button>
         </form>
     )
