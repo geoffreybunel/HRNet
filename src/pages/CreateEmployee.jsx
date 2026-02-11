@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Modal from "@geoffreybunel/react-hrnet-modal";
 import "@geoffreybunel/react-hrnet-modal/style.css";
 import EmployeeForm from "../components/EmployeeForm";
@@ -8,9 +8,10 @@ function CreateEmployee({ onAddEmployee }) {
     // Modal state
     const [isOpen, setIsOpen] = useState(false);
 
+    const navigate = useNavigate();
+
     function handleCreateEmployee(employee) {
         onAddEmployee(employee);
-        console.log(employee)
         setIsOpen(true);
     }
 
@@ -27,7 +28,13 @@ function CreateEmployee({ onAddEmployee }) {
             </div>
             
 
-            <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+            <Modal 
+                isOpen={isOpen} 
+                onClose={() => {
+                    setIsOpen(false);
+                    navigate("/employee-list")
+                }}
+            >
                 Employee Created!
             </Modal>
         </>
