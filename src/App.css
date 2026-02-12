@@ -47,6 +47,12 @@ input {
 }
 
 /* Header Buttons */
+.dp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
 
 .dp-button {
   border: none;
@@ -61,6 +67,11 @@ input {
 
 .dp-button--nav {
   font-size: 1.4em;
+}
+
+.dp-icon {
+  width: 18px;
+  height: 18px;
 }
 
 /* days */
@@ -137,6 +148,11 @@ input {
 
 .ml-5 {
   margin-left: 5px;
+}
+
+.table-icon {
+  width: 18px;
+  height: 18px;
 }
 
 .employee-table_wrapper {
