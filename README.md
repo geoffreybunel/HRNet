@@ -1,16 +1,63 @@
-# React + Vite
+# HRNet – React Modernization Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HRNet is an internal employee management application originally built using jQuery.
+This project consists of a full migration to a modern React-based architecture using Vite.
+The goal was to improve performance, maintainability, and scalability while removing legacy dependencies.
 
-Currently, two official plugins are available:
+## 🎯 Objectives
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Replace legacy jQuery components
+- Improve performance and Lighthouse scores
+- Modernize the architecture using React
+- Publish a reusable React modal component as an npm package
+- Ensure maintainability and scalability
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- Vite
+- Custom npm package: @geoffreybunel/react-hrnet-modal
+- ESLint
+- Lighthouse performance auditing
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```ini
+git clone https://github.com/geoffreybunel/hrnet.git
+cd hrnet
+npm install
+```
+
+## 🚀 Running the project
+
+```ini
+npm run dev
+```
+
+## 🔁 Modal Modernizing
+
+The legacy jQuery modal was replaced with a fully controlled React component.
+
+The new modal:
+- Is reusable
+- Is accessible
+- Supports keyboard interactions
+- Is published as an npm package
+
+Package :
+```ini
+@geoffreybunel/react-hrnet-modal
+```
+
+This ensures better maintainability and reusability across projects.
+
+## 📊 Performance Improvements
+
+- Removal of jQuery
+- Optimized rendering using React
+- Reduced bundle size
+- Lighthouse performance improvements
+
+## 👤 Author
+
+Geoffrey Bunel
