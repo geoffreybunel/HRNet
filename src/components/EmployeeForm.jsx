@@ -48,6 +48,7 @@ function EmployeeForm({ onSubmit }) {
             department,
         };
 
+        // Send data to parent
         onSubmit(employee);
     }
 

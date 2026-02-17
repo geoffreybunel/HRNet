@@ -16,6 +16,7 @@ function App() {
     })
   }
 
+  // load employees from localStorage and synchronise React with the persisted data
   useEffect(() => {
     const storedEmployees = getEmployees();
     setEmployees(storedEmployees);
