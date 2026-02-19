@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Modal from "@geoffreybunel/react-hrnet-modal";
-import "@geoffreybunel/react-hrnet-modal/style.css";
 import EmployeeForm from "../components/EmployeeForm";
 
 function CreateEmployee({ onAddEmployee }) {
@@ -34,6 +33,8 @@ function CreateEmployee({ onAddEmployee }) {
                     setIsOpen(false);
                     navigate("/employee-list")
                 }}
+                contentClassName="modal-content"
+                closeButtonClassName="modal-button"
             >
                 Employee Created!
             </Modal>

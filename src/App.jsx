@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router';
+import "@geoffreybunel/react-hrnet-modal/style.css";
 import './App.css'
 import { useState, useEffect } from 'react';
 import EmployeeList from '../src/pages/EmployeeList'

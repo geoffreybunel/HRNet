@@ -242,3 +242,7 @@ tbody tr:hover {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+.hrnet-modal-content.modal-content {
+  color: orange;
+}
