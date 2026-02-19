@@ -34,7 +34,6 @@ function CreateEmployee({ onAddEmployee }) {
                     navigate("/employee-list")
                 }}
                 contentClassName="modal-content"
-                closeButtonClassName="modal-button"
             >
                 Employee Created!
             </Modal>

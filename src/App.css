@@ -243,6 +243,6 @@ tbody tr:hover {
   cursor: not-allowed;
 }
 
-.hrnet-modal-content.modal-content {
+.modal-content {
   color: orange;
 }
